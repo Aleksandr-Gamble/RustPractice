@@ -1,3 +1,7 @@
 CC-linker
-Rust uses the CC linker, so on a new machine you need to run
+#Rust uses the CC linker, so on a new machine you need to run
 sudo apt install build-essential
+
+VSCode extensions
+# use the Rust rls extension, not the nightly build one
+# note! use File-> Add Folder to Workspace to get the functionality
