@@ -5,3 +5,8 @@ sudo apt install build-essential
 VSCode extensions
 # use the Rust rls extension, not the nightly build one
 # note! use File-> Add Folder to Workspace to get the functionality
+
+Semantic Versioning
+# When you include crates in your Cargo.toml file, cargo will look for versions compatable with that API.
+# It will also pull their dependencies. The Cargo.lock file shows the actual version used for each.
+# This ensures a reproducable build.
