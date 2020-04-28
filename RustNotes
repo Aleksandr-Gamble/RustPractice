@@ -10,3 +10,7 @@ Semantic Versioning
 # When you include crates in your Cargo.toml file, cargo will look for versions compatable with that API.
 # It will also pull their dependencies. The Cargo.lock file shows the actual version used for each.
 # This ensures a reproducable build.
+
+READ THE DOCS
+# run cargo doc --open to create and view a webpage with documentation
+# just your dependencies will be shown
