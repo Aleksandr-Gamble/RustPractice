@@ -1,0 +1,3 @@
+CC-linker
+Rust uses the CC linker, so on a new machine you need to run
+sudo apt install build-essential
