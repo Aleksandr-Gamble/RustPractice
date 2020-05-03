@@ -1,0 +1,26 @@
+
+# This hero-api code was taken from this medium post:
+https://medium.com/sean3z/building-a-restful-crud-api-with-rust-1867308352d8
+
+# For this project only, use the nightly build:
+rustup override set nightly
+
+ISSUES
+* use rocket = "0.4.4" instead of (rocket = "0.3.6" and rocket_codegen = ...)
+* use this starting tempalte instead of the once provided. The old one did not complie due to this error:
+https://stackoverflow.com/questions/57827371/rocket-failing-to-compile
+
+#![feature(proc_macro_hygiene, decl_macro)]
+#[macro_use] extern crate rocket;
+#[get("/<name>/<age>")]
+fn hello(name: String, age: u8) -> String {
+    format!("Hello, {} year old named {}!", age, name)
+}
+fn main() {
+        rocket::ignite()
+            .mount("/hello", routes![hello])
+            .launch();
+}
+
+Then test it here:
+http://localhost:8000/hello/sam/33
