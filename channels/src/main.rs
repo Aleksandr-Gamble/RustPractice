@@ -6,11 +6,16 @@ fn main() {
     println!("Hello, world!");
 
     let (tx, rx) = mpsc::channel();
+    let ns: String = String::from("shibboleth!");
 
-    let handle = thread::spawn(move || {
+    let handle = thread::spawn(move || { // think of move as "take ownership of the things you use here"
         let msg: String = String::from("Helo from this spawned thread!");
         tx.send(msg).unwrap();
     });
+
+    println!("The string {} was never moved so it is still in scope.", ns);
+
+
 
     let msg_rec = rx.recv().unwrap();
     println!("{}", msg_rec);
